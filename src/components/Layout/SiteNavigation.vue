@@ -11,11 +11,17 @@
 
             <div class="flex gap-3 flex-1 justify-end">
                 <i class="fa-solid fa-circle-info text-xl 
-                hover:text-weather-secondary duration-150 cursor-pointer">
+                hover:text-weather-secondary duration-150 cursor-pointer"
+                @click="toggleModal">
                 </i>
 
                 <i class="fa-solid fa-plus text-xl hover: first-letter:text-weather-secondary duration-150 cursor-pointer"></i>
             </div>
+
+            <BaseModal :modalActive="modalActive" @close-modal="toggleModal"> 
+                <h1 class="text-black">Hello from modal</h1>
+                <button> Close </button>
+            </BaseModal>
         </nav>
     </header>
 </template>
@@ -25,6 +31,16 @@
     imports
 */
     import { RouterLink } from 'vue-router';
+    import BaseModal from '@/components/BaseModal.vue';
+import { ref } from '@vue/reactivity';
+/* 
+    modal active
+*/
+
+const modalActive = ref(null)
+const toggleModal = () => {
+modalActive.value = !modalActive.value
+}
 
 
 </script>
