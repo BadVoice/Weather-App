@@ -81,7 +81,7 @@
               alt=""
             />
             <p class="text-xl">
-                {{ Math.round(hourData.temp) }}&deg;
+              {{ Math.round(hourData.temp) }}&deg;
             </p>
           </div>
         </div>
