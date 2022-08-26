@@ -57,7 +57,6 @@
   import { useRouter } from "vue-router";
   import CityList from '@/components/CityList.vue'
 
-
     const router = useRouter()
     const previewCity = (searchResult) => {
       const [city, state] = searchResult.place_name.split(',')

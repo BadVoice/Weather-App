@@ -37,12 +37,13 @@ const getCities = async () => {
     }
 };
     await getCities();
-    const router = useRouter();
+    const route = useRouter();
     const goToCityView = (city) => {
-    router.push({
+    route.push({
         name: "cityView",
         params: { state: city.state, city: city.city },
         query: {
+        id: city.id,
         lat: city.coords.lat,
         lng: city.coords.lng,
         },
